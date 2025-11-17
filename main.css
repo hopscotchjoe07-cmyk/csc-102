@@ -1,0 +1,44 @@
+/*
+declaration block::after
+
+selector{
+    property: value;
+    property2: value;
+}
+*/
+
+/* Body */
+body {
+    background-color: rgb(0, 156, 253); /* light blue background */
+    color: black; /* black text color */
+    font-family: Arial, sans-serif; /* Arial font */
+    margin: 0;
+    padding: 0;
+}
+
+/* Nav */
+nav {
+    height: 600px;
+    width: 200px;
+    float: left;
+    padding: 5px;
+    line-height: 30px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-right: 200px;
+}
+
+/* Meme Image */
+#memeImage {
+    margin-right: 200px;
+    width: 400px;
+    
+}
+
+/* Header */
+header {
+    text-align: center;
+}
