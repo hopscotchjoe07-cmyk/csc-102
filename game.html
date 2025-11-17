@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript function Demo</title>
+    <!-- Link to external JavaScript file -->
+    <script src="code.js" defer></script>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+   <header>
+     <!-- Main title of the page -->
+    <h1 id="heading"> Welcome to my page</h1>
+    <button onclick="updateText()">Change Text</button>
+    </header>
+    <!-- Instructions for the user -->
+    <p>Click the button to roll the dice and see who wins!</p>
+
+    <!-- Form for user input (name for Player 1) -->
+    <form id="playerForm" onsubmit="playDiceDuel(); return false;">
+        <label for="playerName">Enter your name:</label>
+        <input type="text" id="playerName" required>
+        <input type="submit" value="Roll Dice!">
+    </form>
+
+    <!-- Area where game results will show -->
+    <div id="gameResult"></div>
+
+    <!-- Another function example that takes a parameter -->
+    <p>Check your lucky number:</p>
+    <form id="luckyForm" onsubmit="checkLuckyNumber(document.getElementById('luckyInput').value); return false;">
+        <input type="number" id="luckyInput" required>
+        <input type="submit" value="Check Number">
+    </form>
+    <div id="luckyResult"></div>
+</body>
+</html>
