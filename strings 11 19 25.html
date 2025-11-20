@@ -1,0 +1,52 @@
+<!-- Joey Johnson -->
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- This changes the background color -->
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Title for the page -->
+    <h1>Secret Message Page</h1>
+
+    <!-- This is where warning messages will show -->
+    <div id="message"></div>
+
+    <!-- This form collects all the user inputs -->
+    <form onsubmit="checkEverything(); return false;">
+
+        <!-- Box for first name -->
+        <p>First Name:
+            <input type="text" id="firstBox">
+        </p>
+
+        <!-- Box for last name -->
+        <p>Last Name:
+            <input type="text" id="lastBox">
+        </p>
+
+        <!-- Box for zip code -->
+        <p>Zip Code:
+            <input type="text" id="zipBox">
+        </p>
+
+        <!-- The button the user presses -->
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <!-- This is where the secret message will appear -->
+    <div id="secretSpot"></div>
+
+    <!-- Connects this HTML file to the JavaScript -->
+    <script src="strings.js"></script>
+
+</body>
+</html>
