@@ -1,40 +1,49 @@
-function updateText(){
-    document.getElementById("heading").innerHTML = "Welcome to Quarks Casino!";
+// This is the main game function
+function playGame() {
+
+    // Get what the user typed
+    var userGuess = document.getElementById("guess").value;
+
+    // Make a random number from 1 to 10
+    var randomNumber = Math.floor(Math.random() * 10) + 1;
+
+    // Message we will show
+    var message = "";
+
+    // If user typed high
+    if (userGuess === "high") {
+        if (randomNumber > 5) {
+            message = "You win! The number was " + randomNumber;
+        } else {
+            message = "You lose! The number was " + randomNumber;
+        }
+    }
+    // If user typed low
+    else if (userGuess === "low") {
+        if (randomNumber <= 5) {
+            message = "You win! The number was " + randomNumber;
+        } else {
+            message = "You lose! The number was " + randomNumber;
+        }
+    }
+    // If they typed something else
+    else {
+        message = "Type only high or low!";
+    }
+
+    // Show the message on the page
+    document.getElementById("output").innerHTML = message;
 }
-// Function to roll dice for two players and show the winner
-function playDiceDuel() {
-    const playerName = document.getElementById('playerName').value || "Player 1";
 
-    // Roll dice for Player 1 and Player 2 (random 1–6)
-    const player1Roll = Math.floor(Math.random() * 6) + 1;
-    const player2Roll = Math.floor(Math.random() * 6) + 1;
-
-    // Determine the winner
-    let result;
-    if (player1Roll > player2Roll) {
-        result = `${playerName} wins! 🎉 (${player1Roll} vs ${player2Roll})`;
-    } else if (player2Roll > player1Roll) {
-        result = `Player 2 wins! 😎 (${player1Roll} vs ${player2Roll})`;
-    } else {
-        result = `It's a tie! 🤝 (${player1Roll} vs ${player2Roll})`;
-    }
-
-    // Display the result
-    document.getElementById('gameResult').textContent = result;
+// This function doubles a number
+function doubleNumber(num) {
+    return num * 2; // multiply number by 2
 }
 
-// Function to check if a number is "lucky"
-function checkLuckyNumber(number) {
-    const num = parseInt(number);
-
-    if (isNaN(num)) {
-        document.getElementById('luckyResult').textContent = "Please enter a valid number!";
-        return;
-    }
-
-    if (num % 7 === 0) {
-        document.getElementById('luckyResult').textContent = `🎉 ${num} is a lucky number!`;
-    } else {
-        document.getElementById('luckyResult').textContent = `${num} is not so lucky. 😅`;
-    }
+// This function gets user number and shows double
+function showDouble() {
+    var userValue = document.getElementById("userNumber").value;
+    var number = Number(userValue);
+    var result = doubleNumber(number);
+    document.getElementById("doubleOutput").innerHTML = "Double your number is: " + result;
 }
