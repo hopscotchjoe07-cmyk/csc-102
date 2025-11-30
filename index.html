@@ -5,58 +5,104 @@
 
 <!DOCTYPE html>
 <html>
-<!-- start html document -->
 
 <head>
-    <!-- head: metadata and title -->
     <title>CSC102 Home Page</title>
-    <!-- (link to CSS file) -->
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-    <!-- body: visible page content starts here -->
 
-    <!-- header: wrap the main page title -->
     <header>
-        <!-- main heading -->
         <h1>CSC102 Home Page</h1>
     </header>
 
-    <!-- navigation: only include links to other pages (no link to current page) -->
     <nav>
-        <!-- nav heading -->
         <h2>Navigation</h2>
-        <!-- link to the Boards page only -->
         <a href="./boards.html">Boards</a><br>
     </nav>
 
-    <!-- main content area -->
     <main>
-        <!-- paragraph required by the assignment containing the meme image -->
+
+        <!-- meme image for assignment -->
         <p>
-            <!-- image: file must be in same folder and filename must match exactly -->
             <img id="memeImage" src="meme.png" alt="funny meme">
         </p>
 
-        <!-- optional caption or short description -->
+        <!-- small caption -->
         <p>
-            <!-- short caption under the image -->
             This is a school-appropriate meme included for the assignment.
         </p>
+
+        <!-- start and stop buttons -->
+        <button onclick="startMoving()">Start</button>
+        <button onclick="stopMoving()">Stop</button>
+
+        <!-- message area -->
+        <p id="msg"></p>
+
     </main>
 
-    <!-- footer: student and school info before closing body -->
     <footer>
-        <!-- student name -->
         Joseph Johnson<br>
-        <!-- institution name -->
         University of Advancing Technology<br>
-        <!-- street address -->
         2625 W Baseline Rd<br>
-        <!-- city, state, zip -->
         Tempe, AZ 85283<br>
     </footer>
+
+    <!-- javascript code -->
+    <script>
+
+        // starting x and y
+        let x = 0;
+        let y = 0;
+
+        // used to stop movement
+        let intervalId = null;
+
+        // start button function
+        function startMoving() {
+
+            // message
+            document.getElementById("msg").innerHTML = "Moving";
+
+            // get image
+            const img = document.getElementById("memeImage");
+
+            // let it move around
+            img.style.position = "absolute";
+
+            // make sure it doesnt start twice
+            if (intervalId !== null) {
+                return;
+            }
+
+            // move image every 20 ms
+            intervalId = setInterval(function() {
+
+                // add movement
+                x += 3;
+                y += 3;
+
+                // set new position
+                img.style.left = x + "px";
+                img.style.top = y + "px";
+
+            }, 20);
+        }
+
+        // stop button function
+        function stopMoving() {
+
+            // message
+            document.getElementById("msg").innerHTML = "Stopped";
+
+            // stop movement
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+
+    </script>
 
 </body>
 </html>
