@@ -8,6 +8,15 @@
             background-color: lightblue;
             font-family: Arial, Helvetica, sans-serif;
         }
+
+        /* Just making things look cleaner */
+        #palBox {
+            margin-top: 30px;
+            padding: 15px;
+            background: white;
+            width: 350px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -45,8 +54,28 @@
     <!-- This is where the secret message will appear -->
     <div id="secretSpot"></div>
 
+    <!-- Palindrome section -->
+
+    <div id="palBox">
+        <h2>Palindrome Checker</h2>
+
+        <!-- This is where the palindrome result will show -->
+        <div id="palResult"></div>
+
+        <!-- Form ONLY for palindrome -->
+        <form onsubmit="checkPalindrome(); return false;">
+            <p>Enter a word or phrase:</p>
+
+            <input type="text" id="palInput" required>
+
+            <br><br>
+
+            <button type="submit">Check</button>
+        </form>
+    </div>
+
     <!-- Connects this HTML file to the JavaScript -->
     <script src="strings.js"></script>
 
 </body>
-</html>
+</html> 

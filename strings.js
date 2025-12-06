@@ -35,3 +35,28 @@ function checkEverything() {
     document.getElementById("secretSpot").innerHTML =
         "You unlocked the secret message! Great job!";
 }
+// This function runs when the user presses the Check Palindrome button
+function checkPalindrome() {
+
+    // Grab user input
+    let text = document.getElementById("palInput").value;
+
+    // Clean it: remove spaces, make lowercase
+    let clean = text.replace(/\s+/g, "").toLowerCase();
+
+    // Reverse it
+    let reverse = clean.split("").reverse().join("");
+
+    // Area where message goes
+    let box = document.getElementById("palResult");
+
+    // Compare
+    if (clean === reverse) {
+        box.innerHTML = "\"" + text + "\" IS a palindrome!";
+    } else {
+        box.innerHTML = "\"" + text + "\" is NOT a palindrome.";
+    }
+
+    // Clear input for next attempt
+    document.getElementById("palInput").value = "";
+}
