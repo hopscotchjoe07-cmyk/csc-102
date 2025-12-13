@@ -60,3 +60,10 @@ function checkPalindrome() {
     // Clear input for next attempt
     document.getElementById("palInput").value = "";
 }
+
+function playSound() {
+    let sound = document.getElementById("spaceSound");
+    sound.play();
+
+
+}
