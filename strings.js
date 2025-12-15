@@ -1,4 +1,4 @@
-// This function runs when the user presses the Submit button
+// This function runs when the user presses the Submit button 
 function checkEverything() {
 
     // Getting the first name the user typed
@@ -24,7 +24,7 @@ function checkEverything() {
         return; // stops the function here
     }
 
-    // Checking if the zip code is exactly 5 digits AND actually numbers
+    // Checking if the zip code is exactly 5 digits
     if (zip.length != 5 || isNaN(zip)) {
         document.getElementById("message").innerHTML =
             "Zip code must be exactly 5 numbers long.";
@@ -35,7 +35,8 @@ function checkEverything() {
     document.getElementById("secretSpot").innerHTML =
         "You unlocked the secret message! Great job!";
 }
-// This function runs when the user presses the Check Palindrome button
+
+// This function runs when the user presses the Check Palindrome button 
 function checkPalindrome() {
 
     // Grab user input
@@ -57,13 +58,36 @@ function checkPalindrome() {
         box.innerHTML = "\"" + text + "\" is NOT a palindrome.";
     }
 
+
     // Clear input for next attempt
     document.getElementById("palInput").value = "";
+
+
+// call the function that checks palindrome
+    checkPalindromeForm(text);
+};
+
+// the function that checks if it's a palindrome
+function checkPalindromeForm(word) {
+
+    // start empty to build reversed word
+    var reversed = "";
+
+    // loop through the word backwards
+    for (var i = word.length - 1; i >= 0; i--) {
+        reversed += word[i];
+    }
+
+    // compare the two
+    if (word === reversed) {
+        message.innerHTML = "Yep! \"" + word + "\" is a palindrome!";
+    } else {
+        message.innerHTML = "Nope! \"" + word + "\" is not a palindrome.";
+    }
 }
 
+// play the space sound
 function playSound() {
     let sound = document.getElementById("spaceSound");
     sound.play();
-
-
 }
