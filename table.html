@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 60%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Table</h1>
+    <table>
+        <tr>
+            <th>Index</th>
+            <th>Time</th>
+            <th>Task</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>10:00AM</td>
+            <td>Wake up</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>11:00AM</td>
+            <td>Do school work</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>2:00PM</td>
+            <td>Start work</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>11:00PM</td>
+            <td>Go to bed</td>
+        </tr>
+    </table>
+     <!-- (link to CSS file) -->
+    <link rel="stylesheet" href="main.css">
+    
+    <!-- link back to the Home (index) page only -->
+        <a href="./index.html">Home</a><br>
+</body>
+</html>
